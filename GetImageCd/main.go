@@ -3,15 +3,16 @@ package main
 import (
 	"Ihome/GetImageCd/handler"
 	"Ihome/GetImageCd/subscriber"
+	"github.com/micro/go-grpc"
 	"github.com/micro/go-log"
 	"github.com/micro/go-micro"
 
-	example "Ihome/GetImageCd/proto/example"
+	example "Ihome/GetImageCd/proto/getimagecd"
 )
 
 func main() {
 	// New Service
-	service := micro.NewService(
+	service := grpc.NewService(
 		micro.Name("go.micro.srv.GetImageCd"),
 		micro.Version("latest"),
 	)
